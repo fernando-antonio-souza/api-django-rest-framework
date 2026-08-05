@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
 import json
 from django.http import JsonResponse 
 from django.views.decorators.csrf import csrf_exempt
@@ -10,9 +10,9 @@ from rest_framework import generics
 from genres.serializers import GenreSerializer
 
 
-class GenreCreateListView(generics.ListCreateAPIView):
-    queryset = Genre.objects.all()
-    serializer_class = GenreSerializer
+class GenreCreateListView(generics.ListCreateAPIView): # -> realiza a listagem e a criação
+    queryset = Genre.objects.all() # -> informa de onde os dados vêm
+    serializer_class = GenreSerializer # -> trata os dados passando de objetos para JSON
 
 
 
