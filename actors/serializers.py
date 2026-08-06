@@ -6,4 +6,4 @@ class ActorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Actor
-        fiels = "__all__"
+        fields = "__all__"
