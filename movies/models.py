@@ -12,7 +12,7 @@ class Movie(models.Model):
         related_name= "movies", # -> ligação entre as tabelas, por causa da chave estrangeira
     )
 
-    release_data = models.DateField(null = True, blank= True)
+    release_date = models.DateField(null = True, blank= True)
     actors = models.ManyToManyField(Actor, related_name= "movies") # -> usando este field consigo adicionar mais de um valor, e  ele pode ser usado em todos os movies
     resume = models.TextField(null= True, blank= True)
 
