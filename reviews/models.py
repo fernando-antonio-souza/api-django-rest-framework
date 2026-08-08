@@ -19,7 +19,7 @@ class Review(models.Model):
         ]
     )
 
-    coment = models.TextField(null= True, blank= True)
+    comment = models.TextField(null= True, blank= True)
 
     def __str__(self):
-        return self.movie
+        return self.movie.title
