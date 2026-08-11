@@ -1,12 +1,24 @@
+from django.db.models import Avg
 from rest_framework import serializers
 from movies.models import Movie
 
 
+
 class MovieModelSerializer(serializers.ModelSerializer):
+    rate = serializers.SerializerMethodField(read_only = True)
 
     class Meta:
         model = Movie
         fields = "__all__"
+
+    # Calcula a ,édia das stars das reviews de um filme e retorna o rate arredondado, ou null se não houver
+    def get_rate(self, obj):
+        rate = obj.reviews.aggregate(Avg("stars"))["stars__avg"]
+
+        if rate:
+            return round(rate, 1)
+
+        return None
 
 
     def validate_release_date(self, value):
