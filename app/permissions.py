@@ -40,5 +40,5 @@ class GlobalPermissionClass(permissions.BasePermission):
             "HEAD" : "view",
         }
 
-        return method_actions.get(method, " ")
+        return method_actions.get(method, "")
     
