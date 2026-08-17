@@ -33,8 +33,8 @@ class GlobalPermissionClass(permissions.BasePermission):
         method_actions = {
             "GET": "view",
             "POST" : "add",
-            "PUT" : "chnge",
-            "PACTH": "change",
+            "PUT" : "change",
+            "PATCH": "change",
             "DELETE" : "delete",
             "OPTIONS" : "view",
             "HEAD" : "view",
